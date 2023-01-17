@@ -1,0 +1,3 @@
+WARNING: ../rtl/testBench.v:17: $readmemh(RV32Zifencei/rom/I-FENCE.I-01.hex): Not enough words in the file for the requested range [0:4095].
+VCD info: dumpfile test.vcd opened for output.
+../rtl/testBench.v:34: $finish called at 1970000 (1ps)
