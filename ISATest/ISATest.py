@@ -11,6 +11,7 @@ def compileRtlSrc(hexPath):
     iverilog_cmd += ['-o', r'out.vvp']
     iverilog_cmd += ['-D', r'OUTPUT="signature.output"']
     iverilog_cmd += ['-D', r'INPUT="'+hexPath+r'"']
+    iverilog_cmd.append(r'testbench/testbench.v')
     iverilog_cmd.append(r'../rtl/*.v')
     iverilog_cmd.append(r'../rtl/core/*.v')
     iverilog_cmd.append(r'../rtl/bus/*.v')
@@ -76,3 +77,8 @@ def ISAtest(testISA):
 testISA=['RV32I','RV32M','RV32Zicsr','RV32Zifencei']
 for i in testISA:
     ISAtest(i)
+
+
+os.remove("out.vvp")
+os.remove("signature.output")
+os.remove("test.vcd")
